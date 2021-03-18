@@ -1,0 +1,47 @@
+package designprinciples;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+          @SuppressWarnings("resource")
+		Scanner sc=new Scanner(System.in);
+          System.out.println("Welcome to our site.Would you like to order or repair");
+          String s=sc.nextLine().toLowerCase().trim();
+          
+            switch(s) {
+            case "order":
+            	System.out.println("plz provide the model name");
+          	    String modelName=sc.nextLine();
+          	    Orderclass o=new Orderclass();
+          	    o.processOrder(modelName);
+          	    break;
+            case "repair":
+            	System.out.println("It is the phone or accessory u want to repair");
+          	    String ans=sc.nextLine();
+          	    if(ans.equalsIgnoreCase("phone")){
+          	    	System.out.println("Please provide the phone model name");
+              	    String modelName1=sc.nextLine();
+                    Repairclass r=new Repairclass();
+                    r.processPhoneRepair(modelName1);
+                    
+          	    }
+          	    else {
+          	    	System.out.println("Please provide the accessory details");
+              	    String modelName1=sc.nextLine();
+                    Repairclass r=new Repairclass();
+                    r.processAccessoryRepair(modelName1);
+                    break;
+          	    }
+          	    default:
+          	    	break;
+            }
+           
+            
+            
+         
+          
+	}
+
+}
