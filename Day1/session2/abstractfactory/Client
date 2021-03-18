@@ -1,0 +1,30 @@
+package abstractfactory;
+
+import java.util.Scanner;
+
+public class Client {
+	
+	public static Factory getFactory(String type) {
+		if(type.equalsIgnoreCase("Mercedes")) {
+			return new MercedesFactory();
+		}
+		else{
+			return new AudiFactory();
+		}
+	}
+
+	//@SuppressWarnings("resource")
+	public static void main(String[] args) {
+          
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Choose any one (Mercedes/Audi)");
+		
+		String ans=sc.nextLine();
+		
+		Factory f=getFactory(ans);
+		f.makeHeadlight().headlightmessage();
+		f.makeTire().tiremessage();
+	}
+
+}
