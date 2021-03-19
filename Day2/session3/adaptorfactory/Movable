@@ -1,0 +1,6 @@
+package adaptorfactory;
+
+public interface Movable {
+   double getSpeed();
+   double getPrice();
+}
