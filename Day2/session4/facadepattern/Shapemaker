@@ -1,0 +1,26 @@
+package facadepattern;
+
+public class Shapemaker {
+    private Shape circle;
+    private Shape rectangle;
+    private Shape square;
+    
+    Shapemaker(){
+    	circle=new Circle();
+    	rectangle=new Rectangle();
+    	square=new Square();
+    }
+    
+    public void drawcircle() {
+    	circle.draw();
+    }
+    
+    public void drawrectangle() {
+    	rectangle.draw();
+    }
+    
+    public void drawsquare() {
+    	square.draw();
+    }
+
+}
